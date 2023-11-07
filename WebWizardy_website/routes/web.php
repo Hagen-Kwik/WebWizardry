@@ -22,6 +22,10 @@ Route::get('/admins', function () {
     return view('NiceAdmin.admin-index');
 });
 
+Route::get('/pages-blank', function () {
+    return view('NiceAdmin.pages-blank');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
