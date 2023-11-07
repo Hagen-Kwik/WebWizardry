@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/admins', function () {
-    return view('NiceAdmin\admin-index');
+    return view('NiceAdmin.admin-index');
 });
 
 Route::get('/dashboard', function () {
