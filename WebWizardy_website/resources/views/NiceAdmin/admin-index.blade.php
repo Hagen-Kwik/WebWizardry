@@ -334,7 +334,7 @@
             </a>
           </li>
           <li>
-            <a href="components-progress.html">
+            <a href="/components-progress">
               <i class="bi bi-circle"></i><span>Progress</span>
             </a>
           </li>

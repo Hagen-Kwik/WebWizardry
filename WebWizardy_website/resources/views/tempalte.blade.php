@@ -1,11 +1,23 @@
 @extends('layouts.main_layout')
 
-@section('title', 'Web Wizardry')
+@section('title', 'Pricing')
 
 @section('content')
 
+    {{-- <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div> --}}
+    <!-- ***** Preloader End ***** -->
 
-    <!-- ***** Banner ***** -->
+    <!-- ***** Header Area Start ***** -->
     <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
         <div class="container">
             <div class="row">
@@ -34,7 +46,6 @@
         </div>
     </div>
 
-    <!-- ***** Features ***** -->
     <div id="services" class="services section">
         <div class="container">
             <div class="row">
@@ -65,16 +76,15 @@
                     <div class="service-item third-service">
                         <div class="icon"></div>
                         <h4>Negotiable Pricing</h4>
-                        <p>Enjoy negotiable pricing options for flexible payment plans that suit your budget and project
-                            needs.</p>
+                        <p>Enjoy negotiable pricing options for flexible payment plans that suit your budget and project needs.</p>
 
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="service-item fourth-service">
                         <div class="icon"></div>
-                        <h4>Real-time Communication</h4>
-                        <p>Enable real-time communication in website between collaborators for seamless collaboration</p>
+                 <h4>Real-time Communication</h4>
+                 <p>Enable real-time communication in website between collaborators for seamless collaboration</p>
 
                     </div>
                 </div>
@@ -82,8 +92,60 @@
         </div>
     </div>
 
-    <!-- ***** Testimonials ***** -->
-    {{-- Make fake clients --}}
+    <div id="about" class="about-us section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="section-heading">
+                        <h4>About <em>What We Do</em> &amp; Who We Are</h4>
+                        <img src="images/heading-line-dec.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut
+                            labore et dolore magna.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="box-item">
+                                <h4><a href="#">Maintance Problems</a></h4>
+                                <p>Lorem Ipsum Text</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="box-item">
+                                <h4><a href="#">24/7 Support &amp; Help</a></h4>
+                                <p>Lorem Ipsum Text</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="box-item">
+                                <h4><a href="#">Fixing Issues About</a></h4>
+                                <p>Lorem Ipsum Text</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="box-item">
+                                <h4><a href="#">Co. Development</a></h4>
+                                <p>Lorem Ipsum Text</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor idunte ut
+                                labore et dolore adipiscing magna.</p>
+                            <div class="gradient-button">
+                                <a href="#">Start 14-Day Free Trial</a>
+                            </div>
+                            <span>*No Credit Card Required</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-image">
+                        <img src="images/about-right-dec.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="clients" class="the-clients">
         <div class="container">
             <div class="row">
@@ -350,69 +412,69 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="section-heading">
-                        <h4>We Have The Best  <em>Prices</em> You Can Get</h4>
+                        <h4>We Have The Best Pre-Order <em>Prices</em> You Can Get</h4>
+                        <img src="images/heading-line-dec.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut
+                            labore et dolore magna.</p>
                     </div>
                 </div>
-
-                {{-- first --}}
                 <div class="col-lg-4">
                     <div class="pricing-item-regular">
-                        <span class="price">1 JT</span>
-                        <h4>Single-Page Website</h4>
+                        <span class="price">$12</span>
+                        <h4>Standard Plan App</h4>
                         <div class="icon">
                             <img src="images/pricing-table-01.png" alt="">
                         </div>
                         <ul>
-                            <li>1 Long Page</li>
-                            <li>Pre-Made Assets</li>
-                            <li class="non-function">Maintenence</li>
+                            <li>Lorem Ipsum Dolores</li>
+                            <li>20 TB of Storage</li>
+                            <li class="non-function">Life-time Support</li>
                             <li class="non-function">Premium Add-Ons</li>
-                            <li class="non-function">Hosting Avialable</li>
+                            <li class="non-function">Fastest Network</li>
+                            <li class="non-function">More Options</li>
                         </ul>
                         <div class="border-button">
-                            <a href="/pricing">See Details</a>
+                            <a href="#">Purchase This Plan Now</a>
                         </div>
                     </div>
                 </div>
-
-                {{-- second --}}
                 <div class="col-lg-4">
                     <div class="pricing-item-pro">
-                        <span class="price">5 JT</span>
-                        <h4>Personal Website</h4>
+                        <span class="price">$25</span>
+                        <h4>Business Plan App</h4>
                         <div class="icon">
                             <img src="images/pricing-table-01.png" alt="">
                         </div>
                         <ul>
-                            <li>Up to 10 Pages</li>
-                            <li>Pre-Made Assets</li>
-                            <li>Maintenence</li>
-                            <li>Limited Premium Add-Ons</li>
-                            <li class="non-function">Hosting Avialable</li>
+                            <li>Lorem Ipsum Dolores</li>
+                            <li>50 TB of Storage</li>
+                            <li>Life-time Support</li>
+                            <li>Premium Add-Ons</li>
+                            <li class="non-function">Fastest Network</li>
+                            <li class="non-function">More Options</li>
                         </ul>
                         <div class="border-button">
-                            <a href="/pricing">See Details</a>
+                            <a href="#">Purchase This Plan Now</a>
                         </div>
                     </div>
                 </div>
-
-                {{-- third --}}
                 <div class="col-lg-4">
                     <div class="pricing-item-regular">
-                        <span class="price">10 JT</span>
-                        <h4>Professional Website</h4>
+                        <span class="price">$66</span>
+                        <h4>Premium Plan App</h4>
                         <div class="icon">
                             <img src="images/pricing-table-01.png" alt="">
                         </div>
                         <ul>
-                            <li>Unlimited Pages</li>
-                            <li>Hand-Made Assets</li>
-                            <li>Maintenence per month</li>
+                            <li>Lorem Ipsum Dolores</li>
+                            <li>120 TB of Storage</li>
+                            <li>Life-time Support</li>
                             <li>Premium Add-Ons</li>
-                            <li>Hosting Avialable</li>
+                            <li>Fastest Network</li>
+                            <li>More Options</li>
                         </ul>
                         <div class="border-button">
-                            <a href="/pricing">See Details</a>
+                            <a href="#">Purchase This Plan Now</a>
                         </div>
                     </div>
                 </div>

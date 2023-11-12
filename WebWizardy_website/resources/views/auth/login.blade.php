@@ -1,47 +1,79 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+    <link rel="icon" href="logo.png" type="image/png">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="css/animated.css">
+    <link rel="stylesheet" href="css/owl.css">
+
+
+    {{-- change title here --}}
+    <title>
+        Login
+    </title>
+
+</head>
+
+@include('layouts.header')
+
+<body class="">
+    <div class="d-flex flex-row justify-content-center">
+        <div class="d-flex d-none d-lg-flex col-6 justify-content-center align-items-center" style="height: 100vh; background-color: #F9F9F4;">
+            <img src="{{ asset('images/slider-dec.png') }}" style="width: 25vw">
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="d-flex col-lg-6 justify-content-center align-items-center" style="height: 100vh">
+            <div class="d-flex align-items-center justify-content-center flex-column w-100">
+                <h2 class="fw-bold pt-4">Selamat Datang!</h2>
+                <p>Silahkan masuk ke akun Anda</p>
+                <form action="{{ route('login') }}" method="post" class="w-75">
+                    @csrf
+                    <div class="mb-3 mt-4">
+                        <input type="email" class="form-control font-montserrat" id="inputEmail" name="email"
+                            placeholder="Email" required autofocus>
+                        {{-- <small class="text-danger font-montserrat">
+                            @foreach ($errors->get('email') as $err)
+                                {{ ucfirst($err) }}
+                            @endforeach
+                        </small> --}}
+                    </div>
+                    <div class="mb-3 mt-4">
+                        <input type="password" class="form-control font-montserrat" id="inputPassword" name="password"
+                            placeholder="Kata Sandi" required autocomplete="current-password">
+                        {{-- <small class="text-danger font-montserrat">
+                            @foreach ($errors->get('password') as $err)
+                                {{ ucfirst($err) }}
+                            @endforeach
+                        </small> --}}
+                    </div>
+                   
+                    <div class="d-flex justify-content-center">
+                        <button type="submit"
+                            class="btn btn-primary font-montserrat fw-semibold py-2 px-4">Masuk</button>
+                    </div>
+                </form>
+                <h6 class="font-montserrat fw-semibold mt-3 mx-4 text-center">Belum mempunyai akun? <span
+                        class="color-orange fw-bold"><a href="/register"
+                            class="text-decoration-none color-orange">Daftar Di Sini!</a></span></h6>
+            </div>
         </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+</body>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>
