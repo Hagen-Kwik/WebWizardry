@@ -40,7 +40,7 @@
                     <div class="project-item">
                         <h4>Citizen Journalism Remaja</h4>
                         <h6 style="padding: 5%">My team's Hackathon project</h6>
-                        <a href="https://cjr.zone/">See website</a>
+                        <a href="https://cjr.zone/" target="_blank">See website</a>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                     <div class="project-item">
                         <h4>Stepup Socks</h4>
                         <h6 style="padding: 5%">My Digital Entrepreneurship & Innovation project</h6>
-                        <a href="https://stepupsocks.my.canva.site">See website</a>
+                        <a href="https://stepupsocks.my.canva.site" target="_blank">See website</a>
 
                     </div>
                 </div>
