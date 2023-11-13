@@ -30,8 +30,8 @@
                 <div class="col-lg-3">
                     <div class="project-item">
                         <h3>My Library Website</h3>
-                        <h6 style="padding: 5%">My first university project</h6>
-                        <a href="/">See website</a>
+                        <h6 style="padding: 5%">My team's first university project</h6>
+                        <a href="#not-done">See website</a>
                     </div>
                 </div>
 
@@ -47,8 +47,8 @@
                 {{-- first --}}
                 <div class="col-lg-3">
                     <div class="project-item">
-                        <h4>Stepup Socks</h4>
-                        <h6 style="padding: 5%">My Digital Entrepreneurship & Innovation project</h6>
+                        <h4>Wardrobe Chances</h4>
+                        <h6 style="padding: 5%">My team's Website Development project</h6>
                         <a href="https://stepupsocks.my.canva.site" target="_blank" rel="noopener noreferrer">See
                             website</a>
 
@@ -60,14 +60,14 @@
                     <div class="project-item">
                         <h4>Stepup Socks</h4>
                         <h6 style="padding: 5%">My Digital Entrepreneurship & Innovation project</h6>
-                        <a href="https://stepupsocks.my.canva.site" target="_blank" rel="noopener noreferrer">See
+                        <a href="#not-done">See
                             website</a>
 
                     </div>
                 </div>
 
                 {{-- first --}}
-                <div class="col-lg-3">
+                {{-- <div class="col-lg-3">
                     <div class="project-item">
                         <h4>Stepup Socks</h4>
                         <h6 style="padding: 5%">My Digital Entrepreneurship & Innovation project</h6>
@@ -75,7 +75,7 @@
                             website</a>
 
                     </div>
-                </div>
+                </div> --}}
 
 
 
