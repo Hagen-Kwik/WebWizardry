@@ -30,7 +30,7 @@
                 <div class="footer-widget">
                     <h4>Contact Us</h4>
                     <p>Informatics, Universitas Ciputra, Surabaya</p>
-                    <p><a href="#">WebWizardry@gmail.com</a></p>
+                    <p><a href="mailto:abc@example.com">RealWebWizardry@gmail.com</a></p>
                 </div>
             </div>
             <div class="col-lg-3">
@@ -51,7 +51,7 @@
             </div>
 
             <div class="col-lg-3">
-              
+
             </div>
 
             <div class="col-lg-3">
