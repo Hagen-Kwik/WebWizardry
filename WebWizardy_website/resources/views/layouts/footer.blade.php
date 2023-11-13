@@ -29,8 +29,9 @@
             <div class="col-lg-3">
                 <div class="footer-widget">
                     <h4>Contact Us</h4>
-                    <p>Informatics, Universitas Ciputra, Surabaya</p>
-                    <p><a href="mailto:abc@example.com">RealWebWizardry@gmail.com</a></p>
+                    <p><a href="https://informatika.uc.ac.id" target="_blank">Informatics, Universitas Ciputra,
+                            Surabaya</a></p>
+                    <p><a href="mailto:RealWebWizardry@gmail.com">RealWebWizardry@gmail.com</a></p>
                 </div>
             </div>
             <div class="col-lg-3">
