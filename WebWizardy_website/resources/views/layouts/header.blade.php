@@ -4,7 +4,7 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <a href="" class="logo">
-                        <img src="logo_text_right.png" style="height: 100px">
+                        <img src="logo_text_right.png" style="width: 200px">
                     </a>
 
                     <ul class="nav">
@@ -17,7 +17,7 @@
                                         class="fa fa-sign-in-alt"></i> Sign In</a></div>
                         </li>
                     </ul>
-                    
+
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
