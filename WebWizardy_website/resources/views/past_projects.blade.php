@@ -58,15 +58,21 @@
                 {{-- first --}}
                 <div class="col-lg-3">
                     <div class="project-item">
-                        <h4>Single-Page Website</h4>
+                        <h4>Stepup Socks</h4>
+                        <h6 style="padding: 5%">My Digital Entrepreneurship & Innovation project</h6>
+                        <a href="https://stepupsocks.my.canva.site" target="_blank" rel="noopener noreferrer">See
+                            website</a>
 
                     </div>
                 </div>
 
                 {{-- first --}}
                 <div class="col-lg-3">
-                    <div class="pricing-item-regular">
-                        <h4>Single-Page Website</h4>
+                    <div class="project-item">
+                        <h4>Stepup Socks</h4>
+                        <h6 style="padding: 5%">My Digital Entrepreneurship & Innovation project</h6>
+                        <a href="https://stepupsocks.my.canva.site" target="_blank" rel="noopener noreferrer">See
+                            website</a>
 
                     </div>
                 </div>
