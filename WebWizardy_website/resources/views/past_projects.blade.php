@@ -31,7 +31,7 @@
                     <div class="project-item">
                         <h3>My Library Website</h3>
                         <h6 style="padding: 5%">My team's first university project</h6>
-                        <a href="#not-done">See website</a>
+                        <a href="#not-online">See website</a>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                     <div class="project-item">
                         <h4>Wardrobe Chances</h4>
                         <h6 style="padding: 5%">My team's Website Development project</h6>
-                        <a href="https://stepupsocks.my.canva.site" target="_blank" rel="noopener noreferrer">See
+                        <a href="#not-online">See
                             website</a>
 
                     </div>
