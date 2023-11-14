@@ -219,7 +219,7 @@
                                                                 <p>Review for Citizen Journalism Remaja</p>
                                                             </div>
                                                             <div class="down-content">
-                                                                <img src="images/client-image.jpg" alt="">
+                                                                <img src="all_images/Review1.jpg" alt="">
                                                                 <div class="right-content">
                                                                     <h4>Pascal Roger J. T.</h4>
                                                                     <span>CompSci Undergraduate from ITS</span>
@@ -241,7 +241,7 @@
                                                                 <p>Review for Citizen Journalism Remaja</p>
                                                             </div>
                                                             <div class="down-content">
-                                                                <img src="images/client-image.jpg" alt="">
+                                                                <img src="all_images/Review2.jpg" alt="">
                                                                 <div class="right-content">
                                                                     <h4>Gavin Lienardi</h4>
                                                                     <span>Informatics Student in UC Surabaya</span>
@@ -263,7 +263,7 @@
                                                                 <p>Review for Citizen Journalism Remaja</p>
                                                             </div>
                                                             <div class="down-content">
-                                                                <img src="images/client-image.jpg" alt="">
+                                                                <img src="all_images/Review3.png" alt="">
                                                                 <div class="right-content">
                                                                     <h4>Bryan Tanza</h4>
                                                                     <span>Architecture Student <br> in UKP Surabaya</span>
