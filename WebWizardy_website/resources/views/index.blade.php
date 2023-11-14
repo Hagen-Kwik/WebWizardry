@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="section-heading">
-                        <h4>Check What <em>The Clients Say</em> About Our Works</h4>
+                        <h4>Check What <em>People Say</em> About Our Works</h4>
                         <img src="images/heading-line-dec.png" alt="">
                         <p>Below are reviews from our past projects and how people think about them.</p>
                     </div>
