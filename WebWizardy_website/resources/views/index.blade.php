@@ -116,7 +116,7 @@
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
-                                                        <span class="rating">4.8</span>
+                                                        <span class="rating">4.4</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -125,11 +125,11 @@
                                             <div class="thumb">
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-4 col-12">
-                                                        <h4>Angelique Nathania W.</h4>
+                                                        <h4>Gavin Lienardi</h4>
                                                         <span class="date">10 November 2023</span>
                                                     </div>
                                                     <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                        <span class="category">Medical</span>
+                                                        <span class="category">Informatics</span>
                                                     </div>
                                                     <div class="col-lg-4 col-sm-4 col-12">
                                                         <i class="fa fa-star"></i>
@@ -137,7 +137,7 @@
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
-                                                        <span class="rating">4.5</span>
+                                                        <span class="rating">4.2</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -215,7 +215,8 @@
                                                         <div class="col-lg-12">
                                                             <div class="client-content">
                                                                 <img src="images/quote.png" alt="">
-                                                                <p>“”</p>
+                                                                <p>“For the purpose and content of the website, the layout fits well for the content to be understood with ease but if more content is added, then the website would be perfect."</p>
+                                                                <p>Review for Citizen Journalism Remaja</p>
                                                             </div>
                                                             <div class="down-content">
                                                                 <img src="images/client-image.jpg" alt="">
@@ -236,13 +237,14 @@
                                                         <div class="col-lg-12">
                                                             <div class="client-content">
                                                                 <img src="images/quote.png" alt="">
-                                                                <p>“”</p>
+                                                                <p>“Although the resulting website could be improved, I feel like the website as a whole can be enough to convey the necessary information. I feel like it's possible to reduce the whitespace between each container to make the layout feel nicer. Aside from that, the chosen color pallette feels warm and nice.”</p>
+                                                                <p>Review for Citizen Journalism Remaja</p>
                                                             </div>
                                                             <div class="down-content">
                                                                 <img src="images/client-image.jpg" alt="">
                                                                 <div class="right-content">
-                                                                    <h4>Angelique Nathania W.</h4>
-                                                                    <span>Medical Student in UNAIR</span>
+                                                                    <h4>Gavin Lienardi</h4>
+                                                                    <span>Informatics Student in UC Surabaya</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -258,6 +260,7 @@
                                                             <div class="client-content">
                                                                 <img src="images/quote.png" alt="">
                                                                 <p>“The website looks user-friendly. Maybe display the main content sideways so people can view the information faster then use the bottom space for something else.”</p>
+                                                                <p>Review for Citizen Journalism Remaja</p>
                                                             </div>
                                                             <div class="down-content">
                                                                 <img src="images/client-image.jpg" alt="">
