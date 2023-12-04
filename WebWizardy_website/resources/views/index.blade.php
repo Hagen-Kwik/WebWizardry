@@ -89,10 +89,9 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="section-heading">
-                        <h4>Check What <em>The Clients Say</em> About Our App Dev</h4>
+                        <h4>Check What <em>People Say</em> About Our Works</h4>
                         <img src="images/heading-line-dec.png" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <p>Below are reviews from our past projects and how people think about them.</p>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -105,11 +104,11 @@
                                             <div class="thumb">
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-4 col-12">
-                                                        <h4>David Martino Co</h4>
-                                                        <span class="date">30 November 2021</span>
+                                                        <h4>Pascal Roger J. T.</h4>
+                                                        <span class="date">10 November 2023</span>
                                                     </div>
                                                     <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                        <span class="category">Financial Apps</span>
+                                                        <span class="category">Computer Science</span>
                                                     </div>
                                                     <div class="col-lg-4 col-sm-4 col-12">
                                                         <i class="fa fa-star"></i>
@@ -117,7 +116,7 @@
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
-                                                        <span class="rating">4.8</span>
+                                                        <span class="rating">4.4</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,11 +125,11 @@
                                             <div class="thumb">
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-4 col-12">
-                                                        <h4>Jake Harris Nyo</h4>
-                                                        <span class="date">29 November 2021</span>
+                                                        <h4>Gavin Lienardi</h4>
+                                                        <span class="date">10 November 2023</span>
                                                     </div>
                                                     <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                        <span class="category">Digital Business</span>
+                                                        <span class="category">Informatics</span>
                                                     </div>
                                                     <div class="col-lg-4 col-sm-4 col-12">
                                                         <i class="fa fa-star"></i>
@@ -138,7 +137,7 @@
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
-                                                        <span class="rating">4.5</span>
+                                                        <span class="rating">4.2</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -147,24 +146,23 @@
                                             <div class="thumb">
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-4 col-12">
-                                                        <h4>May Catherina</h4>
-                                                        <span class="date">27 November 2021</span>
+                                                        <h4>Bryan Tanza</h4>
+                                                        <span class="date">11 November 2023</span>
                                                     </div>
                                                     <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                        <span class="category">Business &amp; Economics</span>
+                                                        <span class="category">Architecture</span>
                                                     </div>
                                                     <div class="col-lg-4 col-sm-4 col-12">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <span class="rating">4.7</span>
+                                                        <span class="rating">4.0</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div>
+                                        {{-- <div>
                                             <div class="thumb">
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-4 col-12">
@@ -184,13 +182,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="last-thumb">
+                                        </div> --}}
+                                        {{-- <div class="last-thumb">
                                             <div class="thumb">
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-4 col-12">
                                                         <h4>Mark Amber Do</h4>
-                                                        <span class="date">21 November 2021</span>
+                                                        <span class="date">14 November 2023</span>
                                                     </div>
                                                     <div class="col-lg-4 col-sm-4 d-none d-sm-block">
                                                         <span class="category">Web Development</span>
@@ -205,7 +203,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
@@ -217,17 +215,14 @@
                                                         <div class="col-lg-12">
                                                             <div class="client-content">
                                                                 <img src="images/quote.png" alt="">
-                                                                <p>“Lorem ipsum dolor sit amet, consectetur adpiscing
-                                                                    elit, sed do eismod tempor idunte ut labore et
-                                                                    dolore magna aliqua darwin kengan
-                                                                    lorem ipsum dolor sit amet, consectetur picing elit
-                                                                    massive big blasta.”</p>
+                                                                <p>“For the purpose and content of the website, the layout fits well for the content to be understood with ease but if more content is added, then the website would be perfect."</p>
+                                                                <p>Review for Citizen Journalism Remaja</p>
                                                             </div>
                                                             <div class="down-content">
-                                                                <img src="images/client-image.jpg" alt="">
+                                                                <img src="all_images/Review1.jpg" alt="">
                                                                 <div class="right-content">
-                                                                    <h4>David Martino</h4>
-                                                                    <span>CEO of David Company</span>
+                                                                    <h4>Pascal Roger J. T.</h4>
+                                                                    <span>CompSci Undergraduate from ITS</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -242,17 +237,14 @@
                                                         <div class="col-lg-12">
                                                             <div class="client-content">
                                                                 <img src="images/quote.png" alt="">
-                                                                <p>“CTO, Lorem ipsum dolor sit amet, consectetur
-                                                                    adpiscing elit, sed do eismod tempor idunte ut
-                                                                    labore et dolore magna aliqua darwin kengan
-                                                                    lorem ipsum dolor sit amet, consectetur picing elit
-                                                                    massive big blasta.”</p>
+                                                                <p>“Although the resulting website could be improved, I feel like the website as a whole can be enough to convey the necessary information. I feel like it's possible to reduce the whitespace between each container to make the layout feel nicer. Aside from that, the chosen color pallette feels warm and nice.”</p>
+                                                                <p>Review for Citizen Journalism Remaja</p>
                                                             </div>
                                                             <div class="down-content">
-                                                                <img src="images/client-image.jpg" alt="">
+                                                                <img src="all_images/Review2.jpg" alt="">
                                                                 <div class="right-content">
-                                                                    <h4>Jake H. Nyo</h4>
-                                                                    <span>CTO of Digital Company</span>
+                                                                    <h4>Gavin Lienardi</h4>
+                                                                    <span>Informatics Student in UC Surabaya</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -267,17 +259,14 @@
                                                         <div class="col-lg-12">
                                                             <div class="client-content">
                                                                 <img src="images/quote.png" alt="">
-                                                                <p>“May, Lorem ipsum dolor sit amet, consectetur
-                                                                    adpiscing elit, sed do eismod tempor idunte ut
-                                                                    labore et dolore magna aliqua darwin kengan
-                                                                    lorem ipsum dolor sit amet, consectetur picing elit
-                                                                    massive big blasta.”</p>
+                                                                <p>“The website looks user-friendly. Maybe display the main content sideways so people can view the information faster then use the bottom space for something else.”</p>
+                                                                <p>Review for Citizen Journalism Remaja</p>
                                                             </div>
                                                             <div class="down-content">
-                                                                <img src="images/client-image.jpg" alt="">
+                                                                <img src="all_images/Review3.png" alt="">
                                                                 <div class="right-content">
-                                                                    <h4>May C.</h4>
-                                                                    <span>Founder of Catherina Co.</span>
+                                                                    <h4>Bryan Tanza</h4>
+                                                                    <span>Architecture Student <br> in UKP Surabaya</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -285,7 +274,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <div>
                                                 <div class="thumb">
                                                     <div class="row">
@@ -309,8 +298,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
+                                        </li> --}}
+                                        {{-- <li>
                                             <div>
                                                 <div class="thumb">
                                                     <div class="row">
@@ -334,7 +323,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>
