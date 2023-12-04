@@ -9,11 +9,11 @@
         <div class="pagetitle">
             <div class="row justify-content-between">
                 <div class="col">
-                    <h1>Project Progress</h1>
+                    <h1>Project Dashboard</h1>
                     <nav>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">Admin</li>
-                            <li class="breadcrumb-item active">Progress</li>
+                            <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                     </nav>
                 </div>

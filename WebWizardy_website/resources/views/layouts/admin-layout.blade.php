@@ -99,7 +99,7 @@
             <ul class="sidebar-nav" id="sidebar-nav">
                 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="/admin-progress">
+                    <a class="nav-link collapsed" href="/dashboard">
                         <i class="bi bi-bar-chart"></i>
                         <span>Progress</span>
                     </a>

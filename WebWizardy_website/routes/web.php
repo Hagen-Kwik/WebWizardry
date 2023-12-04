@@ -42,9 +42,7 @@ Route::get('/admins', function () {
 Route::get('/admin-requirements', function () {
     return view('admin-requirements');
 });
-Route::get('/admin-progress', function () {
-    return view('admin-progress');
-});
+
 Route::get('/admin-feedbacks', function () {
     return view('admin-feedbacks');
 });
@@ -57,7 +55,7 @@ Route::get('/components-progress', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin-progress');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

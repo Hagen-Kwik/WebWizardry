@@ -13,7 +13,7 @@
                         <li class=""><a href="/past_projects">Past Projects</a></li>
                         {{-- <li class=""><a href="/about_us">About Us</a></li> --}}
                         <li>
-                            <div class="gradient-button"><a id="" href=""><i
+                            <div class="gradient-button"><a id="" href="/login"><i
                                         class="fa fa-sign-in-alt"></i> Sign In</a></div>
                         </li>
                     </ul>
