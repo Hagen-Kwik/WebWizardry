@@ -23,10 +23,18 @@
         <section class="section">
             <h3>Website Progress</h3><br>
             {{-- Progress Bar --}}
-            <div class="progress mt-3" style="height: 50px;">
+            {{-- <div class="progress mt-3" style="height: 50px;">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%"
                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+            </div> --}}
+            <div class="progress mt-3" style="height: 50px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                    style="width: {{ $project->progress_percentage }}%;" aria-valuenow="{{ $project->progress_percentage }}" aria-valuemin="0"
+                    aria-valuemax="100">
+                    {{ $project->progress_percentage }}%
+                </div>
             </div>
+
 
             <div class="container mt-5">
                 <div class="row">

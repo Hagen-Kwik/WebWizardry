@@ -4,21 +4,25 @@
 
 @section('content')
 
-<main id="main" class="main">
+    <main id="main" class="main">
 
-    <div class="pagetitle">
-        <div class="row justify-content-between">
-            <div class="col">
-                <h1>Feature Requirements</h1>
-                <nav>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">Admin</li>
-                        <li class="breadcrumb-item active">Requirements</li>
-                    </ol>
-                </nav>
+        <div class="pagetitle">
+            <div class="row justify-content-between">
+                <div class="col">
+                    <h1>Feature Requirements</h1>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Admin</li>
+                            <li class="breadcrumb-item active">Requirements</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="col text-end">
+                    <button class="saveButton">Request Requirements</button>
+                </div>
             </div>
-        </div>
-    </div><!-- End Page Title -->
+        </div><!-- End Page Title -->
 
         <section class="section">
             {{-- @if ($results != null) --}}
@@ -26,7 +30,7 @@
             <div class="row aBox">
                 <div class="d-flex justify-content-between align-items-center">
                     <h4 class="pt-2">Requirement 1</h4>
-                    <h6 class="pt-2">O Status: Open/Closed</h6>
+                    <h6 class="pt-2">Status: Open/Closed</h6>
                 </div>
 
 

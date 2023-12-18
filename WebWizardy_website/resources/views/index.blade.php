@@ -16,7 +16,7 @@
                                 data-wow-delay="1s">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h2>Create Your Very Own Website Now!</h2>
+                                        <h2>The Right PRICE for Your Very Own Website Now!</h2>
                                         <p>Use WebWizardry to create the your dream website with ease</p>
                                     </div>
 
