@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeedbacksController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\RequirementsController;
@@ -41,14 +42,15 @@ Route::get('/admins', function () {
     return view('NiceAdmin.admin-index');
 });
 
-// Route::get('/admin-requirements', function () {
-//     return view('admin-requirements');
-// });
-Route::get('/admin-requirements', [RequirementsController::class, 'create']);
 
-Route::get('/admin-feedbacks', function () {
-    return view('admin-feedbacks');
-});
+// requriements
+Route::get('/admin-requirements/{projectId}', [RequirementsController::class, 'create'])->middleware(['auth']);
+Route::put('/requirements/{id}/update-status', [RequirementsController::class, 'updateStatus'])->name('update.requirement.status');
+
+// feedbacks
+Route::get('/admin-feedbacks/{projectId}', [FeedbacksController::class, 'create'])->middleware(['auth']);
+
+
 Route::get('/admin-project-details', function () {
     return view('admin-project-details');
 });
@@ -58,12 +60,12 @@ Route::get('/admin-projects', function () {
     return view('admin-project_lists');
 });
 
-Route::get('/components-progress', function () {
+Route::get('/components-progress/{project_id}', function () {
     return view('NiceAdmin.components-progress');
 });
 
 
-Route::get('/admin-progress/{projectId}', [ProjectsController::class, 'showOne'])->middleware(['auth'])->name('project.details');
+    Route::get('/admin-progress/{projectId}', [ProjectsController::class, 'showOne'])->middleware(['auth'])->name('project.details');
 Route::get('/admin-progress', function () {
     return view('admin-progress');
 });

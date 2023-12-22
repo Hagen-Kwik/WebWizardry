@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\feedbacks;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StorefeedbacksRequest;
 use App\Http\Requests\UpdatefeedbacksRequest;
 
@@ -19,10 +20,22 @@ class FeedbacksController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
+
+public function create($projectId)
+{
+    $feedbacks = DB::table('feedbacks')
+        ->where('feedbacks.project_id', $projectId)
+        ->join('requirements', 'feedbacks.requirement_id', '=', 'requirements.id')
+        ->join('users', 'feedbacks.user_id', '=', 'users.id')
+        ->select('feedbacks.*', 'requirements.requirement_name', 'users.admin')
+        ->get();
+
+    return view('admin-feedbacks', [
+        'project_id' => $projectId,
+        'feedbacks' => $feedbacks,
+    ]);
+}
+
 
     /**
      * Store a newly created resource in storage.

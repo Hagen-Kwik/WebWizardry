@@ -78,6 +78,7 @@ class ProjectsController extends Controller
         $project = projects::findOrFail($projectId); // Assuming your model is named Project and has an 'id' field
         return view('admin-progress', [
             'project' => $project,
+            'project_id' => $projectId
         ]);
     }
 }

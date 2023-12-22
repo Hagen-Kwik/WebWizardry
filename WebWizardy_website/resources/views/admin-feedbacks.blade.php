@@ -24,41 +24,68 @@
         </div><!-- End Page Title -->
 
         <section class="section">
-            {{-- @if ($results != null) --}}
-            {{-- @foreach ($results as $result) --}}
-            <div class="row aBox">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h4 class="pt-2">Feedback 1</h4>
-                    <h6 class="pt-2">O Status: Open/Closed</h6>
-                </div>
-
-
-                <h6>description</h6>
-                <br><br>
-                <h5>Replies:</h5>
-                <h6>CLient: I WANT MORE</h6>
-                <div style="display: flex; width: 100%">
-                    <form method="POST" action="" class="pb-2" style="width: 100%">
-                        @csrf
-                        <div style="display: flex; justify-content: flex-start;">
-                            <label for="">Me :</label>
-                            <input type="text">
-                        </div>
-                        <div style="display: flex; justify-content: flex-end;">
-                            {{-- <input type="hidden" name="id" value="{{ $result->id }}"> --}}
-
-                            {{-- <input type="hidden" name="id" value="{{ $result->id }}"> --}}
-                            <input type="hidden" name="reply" value="yes">
-                            <button class="saveButton ms-3" type="submit">Reply</button>
+            {{-- loop all feedbacks on the project --}}
+            @if ($feedbacks != null)
+                @foreach ($feedbacks->groupBy('requirement_id') as $requirementId => $groupedFeedbacks)
+                    <div class="row aBox">
+                        @php $firstFeedback = $groupedFeedbacks->first(); @endphp
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="pt-2">{{ $firstFeedback->requirement_name }}</h4>
                         </div>
 
-                    </form>
-                </div>
-            </div>
-            </div>
-            {{-- @endforeach --}}
-            {{-- @endif --}}
+                        {{-- loop all feedbacks replies on each requirement --}}
+                        @foreach ($groupedFeedbacks as $result)
+                            <h6>
+                                @if ($result->admin == 'yes')
+                                    Admin: {{ $result->feedback }}
+                                @else
+                                    Client: {{ $result->feedback }}
+                                @endif
+                            </h6>
+
+                            {{-- Display "Replies" heading only once --}}
+                            @php $repliesDisplayed = false; @endphp
+
+                            @foreach ($groupedFeedbacks->where('parent_id', $result->id) as $reply)
+                                {{-- Display "Replies" heading only once --}}
+                                @if (!$repliesDisplayed)
+                                    <h5>Replies:</h5>
+                                    @php $repliesDisplayed = true; @endphp
+                                @endif
+
+                                <h6>
+                                    @if ($reply->admin == 'yes')
+                                        Admin: {{ $reply->reply }}
+                                    @else
+                                        Client: {{ $reply->reply }}
+                                    @endif
+                                </h6>
+                            @endforeach
+                        @endforeach
+
+                        <div style="display: flex; width: 100%">
+                            <form method="POST" action="" class="pb-2" style="width: 100%">
+                                @csrf
+                                <div style="display: flex; justify-content: flex-start;">
+                                    <label for="">Reply :</label>
+                                    <input type="text" name="reply">
+                                </div>
+                                <div style="display: flex; justify-content: flex-end;">
+                                    <input type="hidden" name="parent_id" value="{{ $result->id }}">
+                                    <input type="hidden" name="requirement_id" value="{{ $requirementId }}">
+                                    <button class="saveButton ms-3" type="submit">Reply</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
         </section>
+
+
+
+
+
 
     </main><!-- End #main -->
 @endsection

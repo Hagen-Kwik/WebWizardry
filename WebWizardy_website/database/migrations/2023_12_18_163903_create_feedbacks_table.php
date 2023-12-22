@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('requirement_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('project_id');
             $table->text('feedback');
             $table->timestamps();
-            // $table->foreign('requirement_id')->references('id')->on('requirements')->onDelete('cascade');
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('requirement_id')->references('id')->on('requirements')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

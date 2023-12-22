@@ -16,8 +16,11 @@ return new class extends Migration
             $table->string('requirement_name');
             $table->text('requirement_description')->nullable();
             $table->string('status');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+
             $table->timestamps();
-        });        
+        });     
     }
 
     /**

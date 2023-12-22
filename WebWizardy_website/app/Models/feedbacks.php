@@ -12,7 +12,14 @@ class feedbacks extends Model
     protected $fillable = [
         'id',
         'requirement_id',
-        'user__id',
-        'feedback'
+        'user_id',
+        'project_id',
+        'feedback',
+        'status'
     ];
+
+    public function feedbacks()
+    {
+        return $this->hasMany(feedbacks::class, 'requirement_id');
+    }
 }

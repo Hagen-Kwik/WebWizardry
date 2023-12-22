@@ -25,34 +25,39 @@
         </div><!-- End Page Title -->
 
         <section class="section">
-            {{-- @if ($results != null) --}}
-            {{-- @foreach ($results as $result) --}}
-            <div class="row aBox">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h4 class="pt-2">Requirement 1</h4>
-                    <h6 class="pt-2">Status: Open/Closed</h6>
-                </div>
-
-
-                <h6>description</h6>
-
-                <div style="display: flex; width: 100%">
-                    <form method="POST" action="" class="pb-2" style="width: 100%">
-                        @csrf
-                        <div style="display: flex; justify-content: flex-end;">
-                            {{-- <input type="hidden" name="id" value="{{ $result->id }}"> --}}
-
-                            {{-- <input type="hidden" name="id" value="{{ $result->id }}"> --}}
-                            <input type="hidden" name="reply" value="yes">
-                            <button class="saveButton ms-3" type="submit">Done</button>
+            @if ($requirements != null)
+                @foreach ($requirements as $r)
+                    <div class="row aBox">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="pt-2">{{ $r->requirement_name }}</h4>
+                            <h6 class="pt-2">Status: {{ $r->status }}</h6>
                         </div>
 
-                    </form>
-                </div>
-            </div>
-            </div>
-            {{-- @endforeach --}}
-            {{-- @endif --}}
+
+                        <h6>{{ $r->requirement_description }}</h6>
+
+                        <div style="display: flex; width: 100%">
+                            <form method="POST" action="{{ route('update.requirement.status', $r->id) }}" class="pb-2" style="width: 100%">
+                                @csrf
+                                @method('PUT') {{-- Use PUT method for updating --}}
+
+                                <div style="display: flex; justify-content: flex-end;">
+                                    <input type="hidden" name="id" value="{{ $r->id }}">
+                                    <input type="hidden" name="status" value="{{ $r->status }}">
+                                    @if ($r->status == 'Active')
+                                        <button class="btn btn-success ms-3" type="submit">
+                                            Done
+                                        @elseif($r->status == 'Done')
+                                            <button class="saveButton ms-3" type="submit">
+                                                Re Activate
+                                    @endif
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
         </section>
 
     </main><!-- End #main -->

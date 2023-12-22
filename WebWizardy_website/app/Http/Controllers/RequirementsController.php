@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Requirements;
 use App\Http\Requests\StoreRequirementsRequest;
 use App\Http\Requests\UpdateRequirementsRequest;
+use Illuminate\Http\Request;
+
 
 class RequirementsController extends Controller
 {
@@ -19,11 +21,33 @@ class RequirementsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($projectId)
     {
-        return view('admin-requirements');
+        // Retrieve requirements for the specified project
+        $requirements = Requirements::where('project_id', $projectId)->get();
+
+        return view('admin-requirements', [
+            'project_id' => $projectId,
+            'requirements' => $requirements,
+        ]);
     }
 
+    public function updateStatus(Request $request, $id)
+    {
+        // Validate the request if needed
+        $request->validate([
+            'id' => 'required|exists:requirements,id',
+            'status' => 'required|in:Active,Done',
+        ]);
+
+        // Find the requirement by ID
+        $requirement = Requirements::findOrFail($id);
+
+        $requirement->status = ($request->status == 'Active') ? 'Done' : 'Active';
+        $requirement->save();
+
+        return redirect()->back()->with('success', 'Status updated successfully.');
+    }
     /**
      * Store a newly created resource in storage.
      */
