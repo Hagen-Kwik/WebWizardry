@@ -21,17 +21,12 @@
         </div><!-- End Page Title -->
 
         <section class="section">
-            <h3>Website Progress</h3><br>
-            {{-- Progress Bar --}}
-            {{-- <div class="progress mt-3" style="height: 50px;">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%"
-                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-            </div> --}}
+            <h3>Website Progress</h3><br> 
             <div class="progress mt-3" style="height: 50px;">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                     style="width: {{ $project->progress_percentage }}%;" aria-valuenow="{{ $project->progress_percentage }}" aria-valuemin="0"
                     aria-valuemax="100">
-                    {{ $project->progress_percentage }}%
+                    {{ $project->progress_percentage }}
                 </div>
             </div>
 
@@ -42,8 +37,6 @@
 
                     {{-- Requirements --}}
                     <section class="section col-md-6">
-                        {{-- @if ($results != null) --}}
-                        {{-- @foreach ($results as $result) --}}
                         <div class="row aBox">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h4 class="pt-2">Requirement 1</h4>
@@ -57,9 +50,7 @@
                                 <form method="POST" action="" class="pb-2" style="width: 100%">
                                     @csrf
                                     <div style="display: flex; justify-content: flex-end;">
-                                        {{-- <input type="hidden" name="id" value="{{ $result->id }}"> --}}
-
-                                        {{-- <input type="hidden" name="id" value="{{ $result->id }}"> --}}
+                                        
                                         <input type="hidden" name="reply" value="yes">
                                         <button class="saveButton ms-3" type="submit">Done</button>
                                     </div>
@@ -67,8 +58,7 @@
                                 </form>
                             </div>
                         </div>
-                        {{-- @endforeach --}}
-                        {{-- @endif --}}
+                      
                     </section>
 
                     {{-- Feedbacks --}}

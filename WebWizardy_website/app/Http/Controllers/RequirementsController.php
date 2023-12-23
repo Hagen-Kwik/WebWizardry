@@ -6,6 +6,7 @@ use App\Models\Requirements;
 use App\Http\Requests\StoreRequirementsRequest;
 use App\Http\Requests\UpdateRequirementsRequest;
 use Illuminate\Http\Request;
+use App\Models\projects;
 
 
 class RequirementsController extends Controller
@@ -34,22 +35,58 @@ class RequirementsController extends Controller
         ]);
     }
 
-    public function updateStatus(Request $request, $id)
+    public function updateStatus(Request $request, $id, $projectId)
+{
+    // Validate the request if needed
+    $request->validate([
+        'id' => 'required|exists:requirements,id',
+        'status' => 'required|in:Active,Done',
+    ]);
+
+    // Find the requirement by ID
+    $requirement = Requirements::findOrFail($id);
+
+    // Toggle the status
+    $requirement->status = ($request->status == 'Active') ? 'Done' : 'Active';
+    $requirement->save();
+
+    // Calculate progress_percentage
+    $project = projects::findOrFail($projectId);
+
+    // Get all requirements for the project
+    $allRequirements = Requirements::where('project_id', $projectId)->get();
+
+    // Count the number of 'Done' requirements
+    $doneRequirementsCount = $allRequirements->where('status', 'Done')->count();
+
+    // Calculate progress_percentage
+    $project->progress_percentage = ($doneRequirementsCount / $allRequirements->count()) * 100;
+    $project->save();
+
+    return redirect()->back()->with('success', 'Status updated successfully.');
+}
+
+
+
+    public function addRequirement(Request $request, $id)
     {
-        // Validate the request if needed
+        // Validate the request
         $request->validate([
-            'id' => 'required|exists:requirements,id',
-            'status' => 'required|in:Active,Done',
+            'title' => 'required|string',
+            'description' => 'nullable|string',
         ]);
 
-        // Find the requirement by ID
-        $requirement = Requirements::findOrFail($id);
+        // Create a new requirement
+        Requirements::create([
+            'requirement_name' => $request->input('title'),
+            'requirement_description' => $request->input('description'),
+            'status' => 'Active', // You can adjust the default status as needed
+            'project_id' => $id,
+        ]);
 
-        $requirement->status = ($request->status == 'Active') ? 'Done' : 'Active';
-        $requirement->save();
-
-        return redirect()->back()->with('success', 'Status updated successfully.');
+        return redirect()->back()->with('success', 'Requirement added successfully.');
     }
+
     /**
      * Store a newly created resource in storage.
      */

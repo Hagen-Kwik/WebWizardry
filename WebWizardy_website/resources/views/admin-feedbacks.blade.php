@@ -18,7 +18,7 @@
                     </nav>
                 </div>
                 <div class="col text-end">
-                    <button class="saveButton">Add Feedback</button>
+                    <button type='button' class="saveButton"data-bs-toggle="modal" data-bs-target="#addNewFeedback">Add Feedback</button>
                 </div>
             </div>
         </div><!-- End Page Title -->
@@ -82,7 +82,63 @@
             @endif
         </section>
 
+        <div class="modal fade" id="addNewFeedback" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" action="{{ route('add.feedbacks', ['id' => $project_id]) }}">
+                        @csrf
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Feedback</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-4 col-form-label">Choose Requirement</label>
+                                <div class="col-sm-8">
+                                    <select name="requirement_id" class="form-control" required>
+                                        @php
+                                            $remainingRequirementIds = $requirements->pluck('id')->diff($displayedRequirementIds)->toArray();
+                                        @endphp
+                                        @forelse ($remainingRequirementIds as $requirementId)
+                                            @php $requirement = $requirements->where('id', $requirementId)->first(); @endphp
+                                            <option value="{{ $requirement->id }}">{{ $requirement->requirement_name }}</option>
+                                        @empty
+                                            <option disabled>No new requirements</option>
+                                        @endforelse
+                                    </select>
+                                </div>
+                            </div>
+        
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-4 col-form-label">Feedback</label>
+                                <div class="col-sm-8">
+                                    <input type="name" name="feedback" class="form-control" required>
+                                </div>
+                            </div>
+        
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-success">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
 
+        <script>
+            $(document).ready(function() {
+                $('#addNewFeedback').modal({
+                    backdrop: 'static',
+                    keyboard: false
+                });
+
+                $('#addNewFeedback .btn-close').click(function() {
+                    // Optionally, you can add a custom close behavior here
+                });
+            });
+        </script>
 
 
 

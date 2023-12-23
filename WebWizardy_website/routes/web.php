@@ -38,18 +38,16 @@ Route::get('/order_now', function () {
 //     return view('about_us');
 // });
 
-Route::get('/admins', function () {
-    return view('NiceAdmin.admin-index');
-});
-
 
 // requriements
 Route::get('/admin-requirements/{projectId}', [RequirementsController::class, 'create'])->middleware(['auth']);
-Route::put('/requirements/{id}/update-status', [RequirementsController::class, 'updateStatus'])->name('update.requirement.status');
+Route::put('/requirements/{id}/{projectId}/update-status', [RequirementsController::class, 'updateStatus'])->name('update.requirement.status');
+Route::post('/requirements/{id}/add-requirement', [RequirementsController::class, 'addRequirement'])->name('add.requirement');
 
 // feedbacks
 Route::get('/admin-feedbacks/{projectId}', [FeedbacksController::class, 'create'])->middleware(['auth']);
 Route::post('/admin-feedbacks/{projectId}', [FeedbacksController::class, 'reply'])->middleware(['auth'])->name('feedback.store');
+Route::post('/feedbacks/{id}/add-feedback', [FeedbacksController::class, 'addFeedback'])->middleware(['auth'])->name('add.feedbacks');
 
 
 
@@ -58,7 +56,7 @@ Route::post('/admin-project-details/{projectId}', [ProjectsController::class, 'u
 Route::post('/admin-project-details/{projectId}/approve-payment', [ProjectsController::class, 'approve_payment'])->middleware(['auth'])->name('approve.payment');
 
 
-Route::get('/components-progress/{project_id}', function () {
+Route::get('/components-progress', function () {
     return view('NiceAdmin.components-progress');
 });
 

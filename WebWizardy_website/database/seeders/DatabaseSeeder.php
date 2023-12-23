@@ -41,7 +41,6 @@ class DatabaseSeeder extends Seeder
             'hosting' => 'Hosting Availabe',
             'price' => 'Rp 10,000,000',
         ]);
-        
         DB::table('users')->insert([
             'name' => '1',
             'email' => '1@gmail.com',
@@ -75,7 +74,7 @@ class DatabaseSeeder extends Seeder
         DB::table('projects')->insert([
             'project_name' => 'Sample Project 2',
             'pricing_id' => 2,
-            'progress_percentage' => 50,
+            'progress_percentage' => 0,
             'status' => 'In Progress',
             'payment_status' =>'Payment Done',
             'user_id' => 3,
@@ -87,7 +86,6 @@ class DatabaseSeeder extends Seeder
             'requirement_description' => 'Description for Requirement 1.',
             'status'                  => 'Active',
             'project_id' => 1
-
         ]);
         DB::table('requirements')->insert([
             'requirement_name'        => 'Sample Requirement 2',
