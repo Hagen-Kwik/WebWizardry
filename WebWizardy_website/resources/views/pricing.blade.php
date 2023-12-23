@@ -56,7 +56,7 @@
                         <ul>
                             <li>Up to 10 Pages</li>
                             <li>Pre-Made Assets</li>
-                            <li>Maintenence</li>
+                            <li>Maintenence per 3 Months</li>
                             <li>Limited Premium Add-Ons</li>
                             <li class="non-function">Hosting Avialable</li>
                         </ul>

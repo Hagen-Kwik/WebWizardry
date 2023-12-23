@@ -17,7 +17,31 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
-
+        DB::table('pricings')->insert([
+            'pages' => '1 Long Page',
+            'assets' => 'Pre-made Assets',
+            'maintenance' => 'No Maintenance',
+            'add_ons' => 'No Premium Add-ons',
+            'hosting' => 'No Hosting Availabe',
+            'price' => 'Rp 1,000,000',
+        ]);
+        DB::table('pricings')->insert([
+            'pages' => 'Up to 10 Pages',
+            'assets' => 'Pre-made Assets',
+            'maintenance' => 'Maintenance per 3 months',
+            'add_ons' => 'Limited Premium Add-ons',
+            'hosting' => 'No Hosting Availabe',
+            'price' => 'Rp 5,000,000',
+        ]);
+        DB::table('pricings')->insert([
+            'pages' => 'Unlimited Pages',
+            'assets' => 'Hand-made Assets',
+            'maintenance' => 'Maintenance per month',
+            'add_ons' => 'Premium Add-ons',
+            'hosting' => 'Hosting Availabe',
+            'price' => 'Rp 10,000,000',
+        ]);
+        
         DB::table('users')->insert([
             'name' => '1',
             'email' => '1@gmail.com',
@@ -30,22 +54,31 @@ class DatabaseSeeder extends Seeder
             'admin' => 'no',
             'password' => Hash::make('2'),
         ]);
+        DB::table('users')->insert([
+            'name' => '3',
+            'email' => '3@gmail.com',
+            'admin' => 'no',
+            'password' => Hash::make('3'),
+        ]);
 
         DB::table('projects')->insert([
             'project_name' => 'Sample Project 1',
-            'package_id' => 1,
+            'pricing_id' => 1,
             'progress_percentage' => 50,
             'status' => 'In Progress',
-            'user_id' => 1,
+            'user_id' => 2,
+            'payment_status' =>'Waiting Payment',
+            'payment_picture' =>'payment_image_1703344729.png',
             'project_start' => now(),
             'project_end' => now()->addDays(30)
         ]);
         DB::table('projects')->insert([
             'project_name' => 'Sample Project 2',
-            'package_id' => 2,
+            'pricing_id' => 2,
             'progress_percentage' => 50,
             'status' => 'In Progress',
-            'user_id' => 1,
+            'payment_status' =>'Payment Done',
+            'user_id' => 3,
             'project_start' => now(),
             'project_end' => now()->addDays(30)
         ]);

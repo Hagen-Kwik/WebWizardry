@@ -18,54 +18,63 @@
                 </div>
             </div>
         </div>
-
         <section class="section">
             <div class="row">
-                <form action="/admin-tentang-kami" method="POST">
-                    @csrf
-                    {{-- @php
-                        $latarbelakang = $aboutus
-                            ->where('id', 1)
-                            ->pluck('description')
-                            ->first();
-                        $maksud = $aboutus
-                            ->where('id', 2)
-                            ->pluck('description')
-                            ->first();
-                        $tujuan = $aboutus
-                            ->where('id', 3)
-                            ->pluck('description')
-                            ->first();
-                    @endphp --}}
-
-                        <div class="row aBox p-3">
-                            <div class="col">
-                                <h4>Project Start</h4>
-                                <h5>10 october 0202</h5>
-                            </div>
-                            <div class="col">
-                                <h4>Project End</h4>
-                                <h5>Not Yet</h5>
-                            </div>
-                        </div>
-
-                    <div class="mt-5  aBox p-3">
-                        <h4>Payment Status & Details</h4>
-                        <h5>1 million NOT PAID</h5>
+                <div class="row aBox p-3">
+                    <div class="col">
+                        <h4>Project Start</h4>
+                        <h5>{{ $project->project_start ? \Carbon\Carbon::parse($project->project_start)->format('d F Y') : 'Not Yet' }}</h5>
                     </div>
-
-                    <div class="mt-5  aBox p-3">
-                        <h4>Project package details</h4>
-                        <h5>single landing page</h5>
+                    <div class="col">
+                        <h4>Project End</h4>
+                        <h5>{{ $project->project_end ? \Carbon\Carbon::parse($project->project_end)->format('d F Y') : 'Not Yet' }}</h5>
                     </div>
+                </div>
 
+                <div class="mt-5 aBox p-3">
+                    <h4>Payment Status & Details</h4>
+                    <h5>{{ $project->payment_status }}</h5>
+                    <h5>{{ $pricing->price }} </h5>
 
-                </form>
+                    <!-- Upload Image Form -->
+                    <form action="{{ route('upload.payment.image', ['projectId' => $project_id]) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <label for="image">Upload Image:</label>
+                        <input type="file" name="image" accept="image/*">
+                        <br>
+                        <button type="submit">Upload</button>
+                    </form>
+
+                    <!-- Display Uploaded Image -->
+                    @if ($project->payment_picture)
+                        <h5 class="mt-2">Payment Proof: </h5>
+                        <img src="{{ asset('storage/payment_images/' . $project->payment_picture) }}" alt="Uploaded Image"
+                            style="max-width: 100%; max-height: 300px;">
+
+                        @if ($user->admin == 'yes')
+                            <form action="{{ route('approve.payment', ['projectId' => $project_id]) }}" method="POST">
+                                @csrf
+                                @if ($project->payment_status == 'Waiting Payment')
+                                    <button type="submit" class="mt-2 btn btn-success">Approve Payment</button>
+                                @else
+                                    <button type="submit" class="mt-2 btn btn-danger">Cancel Payment</button>
+                                @endif
+                            </form>
+                        @endif
+                    @endif
+                </div>
+
+                <div class="mt-5 aBox p-3">
+                    <h4>Project Package Details - {{ $project->project_name }}</h4>
+                    <p>Number of Pages: {{ $pricing->pages }}</p>
+                    <p>Assets Included: {{ $pricing->assets }}</p>
+                    <p>Maintenance: {{ $pricing->maintenance }}</p>
+                    <p>Add-ons: {{ $pricing->add_ons }}</p>
+                    <p>Hosting: {{ $pricing->hosting }}</p>
+                </div>
             </div>
         </section>
+    </main>
 
-
-
-    </main><!-- End #main -->
 
 @endsection

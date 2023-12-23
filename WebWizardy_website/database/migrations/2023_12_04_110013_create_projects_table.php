@@ -14,15 +14,19 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('project_name');
-            $table->unsignedBigInteger('package_id');
+            $table->unsignedBigInteger('pricing_id');
             $table->integer('progress_percentage');
             $table->string('status');
+            $table->string('payment_picture')->nullable();;
+            $table->string('payment_status');
             $table->unsignedBigInteger('user_id');
             $table->timestamp('project_start')->nullable();
             $table->timestamp('project_end')->nullable();
             $table->timestamps();
+
+            $table->foreign('pricing_id')->references('id')->on('pricings')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
-        
     }
 
     /**

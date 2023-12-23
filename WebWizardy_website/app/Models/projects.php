@@ -16,6 +16,8 @@ class projects extends Model
         'requirements_id',
         'progress percentage',
         'status',
+        'payment_picture',
+        'payment_status',
         'user_id',
         'project start',
         'project end'

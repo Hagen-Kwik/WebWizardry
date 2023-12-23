@@ -64,11 +64,11 @@
                         @endforeach
 
                         <div style="display: flex; width: 100%">
-                            <form method="POST" action="" class="pb-2" style="width: 100%">
+                            <form method="POST" action="{{ route('feedback.store', $project_id) }}" class="pb-2" style="width: 100%">
                                 @csrf
                                 <div style="display: flex; justify-content: flex-start;">
-                                    <label for="">Reply :</label>
-                                    <input type="text" name="reply">
+                                    <label for="feedback">Reply :</label>
+                                    <input type="text" name="feedback">
                                 </div>
                                 <div style="display: flex; justify-content: flex-end;">
                                     <input type="hidden" name="parent_id" value="{{ $result->id }}">
