@@ -19,9 +19,12 @@ return new class extends Migration
             $table->string('status');
             $table->string('payment_picture')->nullable();;
             $table->string('payment_status');
+            $table->string('github')->nullable();
+            $table->string('website_mockup')->nullable();
+            $table->string('proposal')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->timestamp('project_start')->nullable();
-            $table->timestamp('project_end')->nullable();
+            $table->timestamp('project_start')->default(now());
+            $table->timestamp('project_end')->default(now()->addDays(60));
             $table->timestamps();
 
             $table->foreign('pricing_id')->references('id')->on('pricings')->onDelete('cascade');

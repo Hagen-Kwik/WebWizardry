@@ -7,6 +7,9 @@ use App\Http\Requests\StoreprojectsRequest;
 use App\Http\Requests\UpdateprojectsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Requirements;
+use App\Models\feedbacks;
+use App\Models\pricing;
 
 class ProjectsController extends Controller
 {
@@ -88,12 +91,23 @@ class ProjectsController extends Controller
     public function showOne($projectId)
     {
         $project = projects::findOrFail($projectId); // Assuming your model is named Project and has an 'id' field
-        $user = auth()->user()->name;
+        $requirements = Requirements::where('project_id', $projectId)->get();
+        $feedbacks = DB::table('feedbacks')
+            ->where('feedbacks.project_id', $projectId)
+            ->join('requirements', 'feedbacks.requirement_id', '=', 'requirements.id')
+            ->join('users', 'feedbacks.user_id', '=', 'users.id')
+            ->select('feedbacks.*', 'requirements.requirement_name', 'users.admin')
+            ->get();
+        $username = auth()->user()->name;
+        $user = auth()->user();
 
         return view('admin-progress', [
             'project' => $project,
             'project_id' => $projectId,
-            'username' => $user,
+            'user' => $user,
+            'username' => $username,
+            'requirements' => $requirements,
+            'feedbacks' => $feedbacks,
         ]);
     }
 
@@ -156,5 +170,68 @@ class ProjectsController extends Controller
             ->update(['payment_status' => $newPaymentStatus]);
 
         return redirect()->back()->with('success', 'Payment status updated successfully.');
+    }
+
+
+    public function save(Request $request, $projectId)
+    {
+
+        // Validate the input if needed
+
+        // Update the project with the new values
+
+
+        return redirect()->back()->with('success', 'Project details saved successfully.');
+    }
+
+    public function order_page_show()
+    {
+
+
+        $pricing = pricing::all();
+
+        $user = auth()->user();
+        $username = auth()->user()->name;
+
+        return view('order_now', [
+            'pricing' => $pricing,
+            'user' => $user,
+            'username' => $username,
+        ]);
+    }
+
+    public function order(Request $request)
+    {
+
+        $request->validate([
+            'project_name' => 'required|string',
+            'pricing_id' => 'required|exists:pricings,id',
+            'requirements' => 'required|array',
+        ]);
+
+        // Create a new project
+        $project = projects::create([
+            'project_name' => $request->input('project_name'),
+            'pricing_id' => $request->input('pricing_id'),
+            'progress_percentage' => 0,
+            'status' => "In Progress",
+            'payment_status' => 'Waiting Payment',
+            'user_id' => auth()->user()->id,
+        ]);
+
+        // print_r($request->input('requirements'));
+
+        // Create requirements for the project
+        foreach ($request->input('requirements') as $requirementData) {
+            Requirements::create([
+                'requirement_name' => $requirementData['title'],
+                'requirement_description' => $requirementData['details'],
+                'status' => 'Active',
+                'project_id' => $project->id,
+            ]);
+        }
+
+        // Redirect or return a response as needed
+        return redirect()->route('project.details',  $project->id)->with('success', 'Project ordered successfully.');
     }
 }

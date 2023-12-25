@@ -12,14 +12,28 @@ class projects extends Model
     protected $fillable = [
         'id',
         'project_name',
-        'package_id',
+        'pricing_id',
         'requirements_id',
-        'progress percentage',
+        'progress_percentage',
         'status',
         'payment_picture',
         'payment_status',
+        'github',
+        'website_mockup',
+        'proposal',
         'user_id',
         'project start',
         'project end'
     ];
+
+    public function pricing()
+    {
+        return $this->belongsTo(Pricing::class, 'pricing_id');
+    }
+
+    // Define the relationship with Requirements model if needed
+    public function requirements()
+    {
+        return $this->hasMany(Requirements::class);
+    }
 }

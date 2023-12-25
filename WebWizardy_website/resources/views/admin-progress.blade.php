@@ -21,7 +21,8 @@
         </div><!-- End Page Title -->
 
         <section class="section">
-            <h3>Website Progress</h3><br> 
+            <h3>Website Progress</h3><br>
+
             <div class="progress mt-3" style="height: 50px;">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                     style="width: {{ $project->progress_percentage }}%;" aria-valuenow="{{ $project->progress_percentage }}" aria-valuemin="0"
@@ -30,76 +31,69 @@
                 </div>
             </div>
 
-
-            <div class="container mt-5">
+            {{-- requirements and feedbacks --}}
+            <div class="mt-3">
                 <div class="row">
-                    <h3>Priority Task Today!</h3><br>
-
                     {{-- Requirements --}}
-                    <section class="section col-md-6">
+                    <div class="col-md-6">
                         <div class="row aBox">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="pt-2">Requirement 1</h4>
-                                <h6 class="pt-2">O Status: Open/Closed</h6>
-                            </div>
-
-
-                            <h6>description</h6>
-
-                            <div style="display: flex; width: 100%">
-                                <form method="POST" action="" class="pb-2" style="width: 100%">
-                                    @csrf
-                                    <div style="display: flex; justify-content: flex-end;">
-                                        
-                                        <input type="hidden" name="reply" value="yes">
-                                        <button class="saveButton ms-3" type="submit">Done</button>
-                                    </div>
-
-                                </form>
-                            </div>
+                            <h5>Requirements Done:</h5>
+                            <p>Active: {{ $requirements->where('status', 'Active')->count() }}</p>
+                            <p>Done: {{ $requirements->where('status', 'Done')->count() }}</p>
                         </div>
-                      
-                    </section>
+                    </div>
 
                     {{-- Feedbacks --}}
-                    <section class="section col-md-6">
-                        {{-- @if ($results != null) --}}
-                        {{-- @foreach ($results as $result) --}}
+                    <div class="col-md-6">
                         <div class="row aBox">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="pt-2">Feedback 1</h4>
-                                <h6 class="pt-2">O Status: Open/Closed</h6>
-                            </div>
-
-
-                            <h6>description</h6>
-                            <br><br>
-                            <h5>Replies:</h5>
-                            <h6>CLient: I WANT MORE</h6>
-                            <div style="display: flex; width: 100%">
-                                <form method="POST" action="" class="pb-2" style="width: 100%">
-                                    @csrf
-                                    <div style="display: flex; justify-content: flex-start;">
-                                        <label for="">Me :</label>
-                                        <input type="text">
-                                    </div>
-                                    <div style="display: flex; justify-content: flex-end;">
-                                        {{-- <input type="hidden" name="id" value="{{ $result->id }}"> --}}
-
-                                        {{-- <input type="hidden" name="id" value="{{ $result->id }}"> --}}
-                                        <input type="hidden" name="reply" value="yes">
-                                        <button class="saveButton ms-3" type="submit">Reply</button>
-                                    </div>
-
-                                </form>
-                            </div>
+                            <h5>Feedbacks:</h5>
+                            <h3>{{ $feedbacks->count() }}</h3>
                         </div>
-                        {{-- @endforeach --}}
-                        {{-- @endif --}}
-                    </section>
+                    </div>
+                </div>
 
+                {{-- Links --}}
+                <div class="mt-3">
+                    <div class="row aBox">
+                        @if ($user->admin)
+                            <form method="post" action="{{ route('save.project.links', $project->id) }}">
+                                @csrf
+                                <div class="col-md-12">
+                                    <label for="github">Github:</label>
+                                    <input type="text" class="form-control" id="github" name="github" value="{{ $project->github }}">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="mockup">Website Mockup:</label>
+                                    <input type="text" class="form-control" id="mockup" name="mockup" value="{{ $project->website_mockup }}">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="proposal">Proposal:</label>
+                                    <input type="text" class="form-control" id="proposal" name="proposal" value="{{ $project->proposal }}">
+                                </div>
+                                <div class="col-md-12 mt-3">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </form>
+                        @else
+                            {{-- If user is not admin, display links --}}
+                            <div class="col-md-12">
+                                <h5>Github:</h5>
+                                <a href="{{ $project->github_link }}" target="_blank">{{ $project->github }}</a>
+                            </div>
+                            <div class="col-md-12">
+                                <h5>Website Mockup:</h5>
+                                <a href="{{ $project->mockup_link }}" target="_blank">{{ $project->website_mockup }}</a>
+                            </div>
+                            <div class="col-md-12">
+                                <h5>Proposal:</h5>
+                                <a href="{{ $project->proposal_link }}" target="_blank">{{ $project->proposal }}</a>
+                            </div>
+                        @endif
+                    </div>
                 </div>
             </div>
         </section>
+
+
     </main><!-- End #main -->
 @endsection

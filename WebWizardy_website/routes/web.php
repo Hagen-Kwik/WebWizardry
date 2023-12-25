@@ -29,9 +29,7 @@ Route::get('/past_projects', function () {
     return view('past_projects');
 });
 
-Route::get('/order_now', function () {
-    return view('order_now');
-});
+
 
 // lihat nanti
 // Route::get('/about_us', function () {
@@ -49,8 +47,7 @@ Route::get('/admin-feedbacks/{projectId}', [FeedbacksController::class, 'create'
 Route::post('/admin-feedbacks/{projectId}', [FeedbacksController::class, 'reply'])->middleware(['auth'])->name('feedback.store');
 Route::post('/feedbacks/{id}/add-feedback', [FeedbacksController::class, 'addFeedback'])->middleware(['auth'])->name('add.feedbacks');
 
-
-
+// project details
 Route::get('/admin-project-details/{projectId}', [ProjectsController::class, 'details'])->middleware(['auth']);
 Route::post('/admin-project-details/{projectId}', [ProjectsController::class, 'uploadPaymentImage'])->middleware(['auth'])->name('upload.payment.image');
 Route::post('/admin-project-details/{projectId}/approve-payment', [ProjectsController::class, 'approve_payment'])->middleware(['auth'])->name('approve.payment');
@@ -60,11 +57,13 @@ Route::get('/components-progress', function () {
     return view('NiceAdmin.components-progress');
 });
 
-
+// progress
 Route::get('/admin-progress/{projectId}', [ProjectsController::class, 'showOne'])->middleware(['auth'])->name('project.details');
+Route::post('/save/project/{projectId}', [ProjectsController::class, 'save'])->name('save.project.links');
 
 
-
+Route::get('/order_now', [ProjectsController::class, 'order_page_show'])->middleware(['auth']);
+Route::post('/project_ordered', [ProjectsController::class, 'order'])->middleware(['auth'])->name('order.project');
 Route::get('/dashboard', [ProjectsController::class, 'showAll'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

@@ -26,11 +26,13 @@ class RequirementsController extends Controller
     {
         // Retrieve requirements for the specified project
         $requirements = Requirements::where('project_id', $projectId)->get();
-        $user = auth()->user()->name;
+        $username = auth()->user()->name;
+        $user = auth()->user();
 
         return view('admin-requirements', [
             'project_id' => $projectId,
-            'username' => $user,
+            'username' => $username,
+            'user' => $user,
             'requirements' => $requirements,
         ]);
     }

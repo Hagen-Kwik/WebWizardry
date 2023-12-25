@@ -24,9 +24,7 @@
     <link href="admin/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="admin/vendor/simple-datatables/style.css" rel="stylesheet">
 
-    <title>
-        @yield('title')
-    </title>
+    <title>My Projects</title>
 
     {{-- <!-- Main CSS File --> --}}
     <link href="admin/css/style.css" rel="stylesheet">
@@ -49,7 +47,7 @@
             <div class="d-flex align-items-center justify-content-between">
                 <a href="#" class="logo d-flex align-items-center">
                     <img src="{{ asset('logo.png') }}" alt="product">
-                    <span class="d-none d-lg-block">Admin</span>
+                    <span class="d-none d-lg-block">Dashboard</span>
                 </a>
             </div><!-- End Logo -->
 
@@ -95,12 +93,16 @@
 
 
         {{-- MAIN CODE --}}
-        <main id="main" class="main">
 
+        <main id="main" class="main">
             <div class="pagetitle">
                 <div class="row justify-content-between">
                     <div class="col">
                         <h1>All Projects</h1>
+                    </div>
+    
+                    <div class="col text-end">
+                        <a href="/order_now"><button type="button" class="saveButton">New Project</button></a>
                     </div>
                 </div>
             </div><!-- End Page Title -->

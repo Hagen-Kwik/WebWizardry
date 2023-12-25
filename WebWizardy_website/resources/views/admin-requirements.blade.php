@@ -37,23 +37,26 @@
                         <h6>{{ $r->requirement_description }}</h6>
 
                         <div style="display: flex; width: 100%">
-                            <form method="POST" action="{{ route('update.requirement.status', ['id' => $r->id, 'projectId' => $project_id]) }}" class="pb-2" style="width: 100%">
-                                @csrf
-                                @method('PUT') {{-- Use PUT method for updating --}}
+                            @if ($user->admin === 'yes')
+                                <form method="POST" action="{{ route('update.requirement.status', ['id' => $r->id, 'projectId' => $project_id]) }}"
+                                    class="pb-2" style="width: 100%">
+                                    @csrf
+                                    @method('PUT') {{-- Use PUT method for updating --}}
 
-                                <div style="display: flex; justify-content: flex-end;">
-                                    <input type="hidden" name="id" value="{{ $r->id }}">
-                                    <input type="hidden" name="status" value="{{ $r->status }}">
-                                    @if ($r->status == 'Active')
-                                        <button class="btn btn-success ms-3" type="submit">
-                                            Done
-                                        @elseif($r->status == 'Done')
-                                        <button class="saveButton ms-3" type="submit">
-                                            Re Activate
-                                    @endif
-                                    </button>
-                                </div>
-                            </form>
+                                    <div style="display: flex; justify-content: flex-end;">
+                                        <input type="hidden" name="id" value="{{ $r->id }}">
+                                        <input type="hidden" name="status" value="{{ $r->status }}">
+                                        @if ($r->status == 'Active')
+                                            <button class="btn btn-success ms-3" type="submit">
+                                                Done
+                                            @elseif($r->status == 'Done')
+                                                <button class="saveButton ms-3" type="submit">
+                                                    Re Activate
+                                        @endif
+                                        </button>
+                                    </div>
+                                </form>
+                            @endif
                         </div>
                     </div>
                 @endforeach
@@ -66,7 +69,7 @@
             <div class="modal-content">
                 <form method="POST" action="{{ route('add.requirement', $project_id) }}">
                     @csrf
-                    
+
                     <div class="modal-header">
                         <h5 class="modal-title">Add Requirement</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
