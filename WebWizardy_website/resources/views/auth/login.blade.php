@@ -37,8 +37,8 @@
         </div>
         <div class="d-flex col-lg-6 justify-content-center align-items-center" style="height: 100vh">
             <div class="d-flex align-items-center justify-content-center flex-column w-100">
-                <h2 class="fw-bold pt-4">Selamat Datang!</h2>
-                <p>Silahkan masuk ke akun Anda</p>
+                <h2 class="fw-bold pt-4">Welcome!</h2>
+                <p>Please Enter Your credentials</p>
                 <form action="{{ route('login') }}" method="post" class="w-75">
                     @csrf
                     <div class="mb-3 mt-4">
@@ -62,12 +62,12 @@
                    
                     <div class="d-flex justify-content-center">
                         <button type="submit"
-                            class="btn btn-primary font-montserrat fw-semibold py-2 px-4">Masuk</button>
+                            class="btn btn-primary font-montserrat fw-semibold py-2 px-4">Login</button>
                     </div>
                 </form>
-                <h6 class="font-montserrat fw-semibold mt-3 mx-4 text-center">Belum mempunyai akun? <span
+                <h6 class="font-montserrat fw-semibold mt-3 mx-4 text-center">Don't Have An Account? <span
                         class="color-orange fw-bold"><a href="/register"
-                            class="text-decoration-none color-orange">Daftar Di Sini!</a></span></h6>
+                            class="text-decoration-none color-orange">Register Here!</a></span></h6>
             </div>
         </div>
     </div>

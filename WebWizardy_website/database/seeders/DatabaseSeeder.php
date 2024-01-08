@@ -42,10 +42,10 @@ class DatabaseSeeder extends Seeder
             'price' => 'Rp 10,000,000',
         ]);
         DB::table('users')->insert([
-            'name' => '1',
-            'email' => '1@gmail.com',
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
             'admin' => 'yes',
-            'password' => Hash::make('1'),
+            'password' => Hash::make('admin'),
         ]);
         DB::table('users')->insert([
             'name' => '2',

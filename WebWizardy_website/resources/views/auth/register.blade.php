@@ -33,8 +33,8 @@
 <div class="d-flex flex-row justify-content-center">
     <div class="d-flex col-lg-6 justify-content-center align-items-center" style="height: 100vh">
         <div class="d-flex align-items-center justify-content-center flex-column w-100">
-            <h2 class="fw-bold pt-4">Selamat Bergabung!</h2>
-            <p>Silahkan isi data diri Anda</p>
+            <h2 class="fw-bold pt-4">Welcome New User!</h2>
+            <p>PLease Fill In This Form</p>
             <form action="{{ route('register') }}" method="post" class="w-75">
                 @csrf
                 <div class="mb-3 mt-4">
@@ -79,12 +79,11 @@
                 <div class="mb-5">
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary font-montserrat fw-semibold py-2 px-4">Daftar</button>
+                    <button type="submit" class="btn btn-primary font-montserrat fw-semibold py-2 px-4">Register</button>
                 </div>
             </form>
-            <h6 class="font-montserrat fw-semibold mt-3 mx-4 text-center">Sudah mempunyai akun? <span
-                    class="color-orange fw-bold"><a href="/login" class="text-decoration-none color-orange">Masuk Di
-                        Sini!</a></span></h6>
+            <h6 class="font-montserrat fw-semibold mt-3 mx-4 text-center">Have an Account? <span
+                    class="color-orange fw-bold"><a href="/login" class="text-decoration-none color-orange">Login Here!</a></span></h6>
         </div>
     </div>
     <div class="d-flex d-none d-lg-flex col-6 justify-content-center align-items-center"
