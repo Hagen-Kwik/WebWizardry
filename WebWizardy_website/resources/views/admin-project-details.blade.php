@@ -33,6 +33,7 @@
 
                 <div class="mt-3 aBox p-3">
                     <h4>Payment Status & Details</h4>
+                    <h4>BCA - 8620524485 an Hagen</h4>
                     <h5>{{ $project->payment_status }}</h5>
                     <h5>{{ $pricing->price }} </h5>
 
