@@ -189,7 +189,13 @@ class ProjectsController extends Controller
         // Validate the input if needed
 
         // Update the project with the new values
-
+        DB::table('projects')
+        ->where('id', $projectId)
+        ->update([
+            'github' => $request->input('github'),
+            'website_mockup' => $request->input('mockup'),
+            'proposal' => $request->input('proposal'),
+        ]);
 
         return redirect()->back()->with('success', 'Project details saved successfully.');
     }
