@@ -63,7 +63,7 @@
                                     <input type="text" class="form-control" id="github" name="github" value="{{ $project->github }}">
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="mockup">Website Mockup:</label>
+                                    <label for="mockup">Website</label>
                                     <input type="text" class="form-control" id="mockup" name="mockup" value="{{ $project->website_mockup }}">
                                 </div>
                                 <div class="col-md-12">
