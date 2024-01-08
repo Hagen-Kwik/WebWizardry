@@ -172,6 +172,16 @@ class ProjectsController extends Controller
         return redirect()->back()->with('success', 'Payment status updated successfully.');
     }
 
+    public function finish_project(Request $request, $id)
+    {
+           // Update the payment status in the database
+        DB::table('projects')
+            ->where('id', $id)
+            ->update(['status' => 'Finished']);
+
+        return redirect()->back()->with('success', 'Payment status updated successfully.');
+    }
+
 
     public function save(Request $request, $projectId)
     {

@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="mt-5 aBox p-3">
+                <div class="mt-3 aBox p-3">
                     <h4>Payment Status & Details</h4>
                     <h5>{{ $project->payment_status }}</h5>
                     <h5>{{ $pricing->price }} </h5>
@@ -64,13 +64,31 @@
                     @endif
                 </div>
 
-                <div class="mt-5 aBox p-3">
+                <div class="mt-3 aBox p-3">
                     <h4>Project Package Details - {{ $project->project_name }}</h4>
                     <p>Number of Pages: {{ $pricing->pages }}</p>
                     <p>Assets Included: {{ $pricing->assets }}</p>
                     <p>Maintenance: {{ $pricing->maintenance }}</p>
                     <p>Add-ons: {{ $pricing->add_ons }}</p>
                     <p>Hosting: {{ $pricing->hosting }}</p>
+                </div>
+
+
+                <div class="row aBox p-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="pt-2">Status: {{ $project->status }}</h4>
+                        {{-- <a href="{{ route('projects.show', $project->id) }}" class="saveButton">See Details</a> --}}
+
+                        @if ($user->admin == 'yes')
+                            <form action="{{ route('finish.project', ['projectId' => $project_id]) }}" method="POST">
+                                @csrf
+                                @if ($project->status == 'In Progress')
+                                    <button type="submit" class="mt-2 btn btn-success">Finish Project</button>
+                                @endif
+                            </form>
+                        @endif
+
+                    </div>
                 </div>
             </div>
         </section>

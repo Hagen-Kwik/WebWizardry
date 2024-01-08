@@ -51,6 +51,7 @@ Route::post('/feedbacks/{id}/add-feedback', [FeedbacksController::class, 'addFee
 Route::get('/admin-project-details/{projectId}', [ProjectsController::class, 'details'])->middleware(['auth']);
 Route::post('/admin-project-details/{projectId}', [ProjectsController::class, 'uploadPaymentImage'])->middleware(['auth'])->name('upload.payment.image');
 Route::post('/admin-project-details/{projectId}/approve-payment', [ProjectsController::class, 'approve_payment'])->middleware(['auth'])->name('approve.payment');
+Route::post('/admin-project-details/{projectId}/finish-project', [ProjectsController::class, 'finish_project'])->middleware(['auth'])->name('finish.project');
 
 
 Route::get('/components-progress', function () {

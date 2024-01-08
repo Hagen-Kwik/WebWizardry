@@ -112,11 +112,13 @@
                     @foreach ($all_Projects as $project)
                         <div class="row aBox">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="pt-2">{{ $project->project_name }} (Status: {{ $project->status }})</h4>
+                                <h4 class="pt-2">{{ $project->project_name }}</h4>
                                 {{-- <a href="{{ route('projects.show', $project->id) }}" class="saveButton">See Details</a> --}}
                                 <a href="{{ route('project.details', ['projectId' => $project->id]) }}" class="saveButton">See Details</a>
                                 {{-- <a href="" class="saveButton">See Details</a> --}}
                             </div>
+                            <h5 class="pt-2">Payment:{{$project->payment_status}}</h5>
+                                <h5 class="pt-2">Status: {{ $project->status}}</h5>
                         </div>
                     @endforeach
                 @else
