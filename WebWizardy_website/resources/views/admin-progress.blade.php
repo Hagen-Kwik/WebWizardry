@@ -55,7 +55,7 @@
                 {{-- Links --}}
                 <div class="mt-3">
                     <div class="row aBox">
-                        @if ($user->admin)
+                        @if ($user == 'admin')
                             <form method="post" action="{{ route('save.project.links', $project->id) }}">
                                 @csrf
                                 <div class="col-md-12">
