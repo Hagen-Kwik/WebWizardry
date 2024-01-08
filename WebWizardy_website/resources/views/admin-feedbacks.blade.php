@@ -32,9 +32,14 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="pt-2">{{ $firstFeedback->requirement_name }}</h4>
                         </div>
-
+        
+                        {{-- Sort the $groupedFeedbacks array by timestamp --}}
+                        @php
+                            $sortedFeedbacks = $groupedFeedbacks->sortBy('created_at');
+                        @endphp
+        
                         {{-- loop all feedbacks replies on each requirement --}}
-                        @foreach ($groupedFeedbacks as $result)
+                        @foreach ($sortedFeedbacks as $result)
                             <h6>
                                 @if ($result->admin == 'yes')
                                     Admin: {{ $result->feedback }}
@@ -42,17 +47,17 @@
                                     Client: {{ $result->feedback }}
                                 @endif
                             </h6>
-
+        
                             {{-- Display "Replies" heading only once --}}
                             @php $repliesDisplayed = false; @endphp
-
-                            @foreach ($groupedFeedbacks->where('parent_id', $result->id) as $reply)
+        
+                            @foreach ($sortedFeedbacks->where('parent_id', $result->id) as $reply)
                                 {{-- Display "Replies" heading only once --}}
                                 @if (!$repliesDisplayed)
                                     <h5>Replies:</h5>
                                     @php $repliesDisplayed = true; @endphp
                                 @endif
-
+        
                                 <h6>
                                     @if ($reply->admin == 'yes')
                                         Admin: {{ $reply->reply }}
@@ -62,6 +67,8 @@
                                 </h6>
                             @endforeach
                         @endforeach
+
+        
 
                         <div style="display: flex; width: 100%">
                             <form method="POST" action="{{ route('feedback.store', $project_id) }}" class="pb-2" style="width: 100%">
